@@ -26,7 +26,8 @@ pipeline {
 
  stage('Approve via email') {
  steps {
- emailext to: 'devopsmay24batch@gmail.com', mimeType: 'text/html', subject: 'New build is waiting for your approval', body: '<html><p>A new build has been deployed, please view it by visiting <a href=http://localhost:8000/>"http://localhost:8080/"</a>, please approve this deployment by clicking on <a href=http://localhost:8080/job/demopyapp/${BUILD_NUMBER}/input/>"http://localhost:8080/${BUILD_NUMBER}/input/"</a></p></html>', attachLog: true
+ emailext to: 'orie.josiah@gmail.com', mimeType: 'text/html', subject: 'New build is waiting for your approval', body: '<html><p>A new build has been deployed, please view it by visiting <a href=http://localhost:8000/>"http://localhost:8080/"</a>, please approve this deployment by clicking on <a href=http://localhost:8080/job/demopyapp/${BUILD_NUMBER}/input/>"http://localhost:8080/${BUILD_NUMBER}/input/"</a></p></html>', attachLog: true
+
  timeout(time: 60, unit: 'MINUTES') {
  }
  }
@@ -59,3 +60,4 @@ pipeline {
  }
  }
 }
+
